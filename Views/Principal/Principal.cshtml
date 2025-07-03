@@ -1,0 +1,54 @@
+﻿@model MvcMovie1.Models.PrincipalModel
+
+@{
+    ViewData["Title"] = "Principal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Agregar un contenedor centralizado para una mejor presentación -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <!-- Título con color rosa -->
+            <h2 style="color:cadetblue;text-align: center; font-family: 'Bodoni MT Black', sans-serif;">Bienvenido al Panel Principal</h2>
+            <p class="lead text-pink">Aquí encontrarás información clave sobre tu sesión y más.</p>
+        </div>
+    </div>
+
+    <!-- Información principal -->
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card " style="border-color: #4FFF;">
+                <!-- Celeste para el borde -->
+                <div class="card-header" style="background-color: #4fff;"> 
+                    <h4 class="text-white">Detalles de la sesión</h4>
+                </div>
+                <div class="card-body" style="background-color: aliceblue;">
+                    <!-- Celeste para el fondo -->
+                    <p><strong>Mensaje del modelo:</strong> <span class="text-danger">@Model.Mensaje</span></p>
+                    <p><strong>Fecha de ingreso:</strong> <span class="text-muted">@Model.FechaIngreso.ToString("f")</span></p>
+                    <p><strong>Mensaje desde ViewBag:</strong> <span class="text-muted">@ViewBag.Saludo</span></p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <h2 style="font-family: 'Bodoni MT Black', sans-serif; color: cadetblue;">
+            GLOBAL TECHNOLOGY
+        </h2>
+        <p style="margin-bottom: 5px;">
+            Bienvenidos a nuestro proyecto: <strong>Camino a Casa</strong>
+        </p>
+        <img src="/images/Logo.jpg" style="margin-top: 0; max-width: 300px;" class="img-fluid mx-auto d-block" alt="Logo Global Techonolgy" />
+    </div>
+    <!-- Agregar un pie de página para más detalles o enlaces -->
+    <div class="row mt-4">
+        <div class="col-md-12 text-center">
+            <footer class="text-muted" style="background-color: #f8bbd0; color: white;">
+                <p>&copy; @DateTime.Now.Year - Tu aplicación de cine.</p>
+                <p><a href="#" class="text-black">Política de privacidad</a> | <a href="#" class="text-black">Términos de servicio</a></p>
+            </footer>
+        </div>
+    </div>
+</div>

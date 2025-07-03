@@ -1,0 +1,103 @@
+﻿@model MvcMovie1.Models.UsuarioModel
+
+@{
+    ViewBag.Title = "Editar Usuario";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #fce4ec;
+            font-family: 'Arial', sans-serif;
+            padding: 40px;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d81b60;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #880e4f;
+        }
+
+        .form-control {
+            border-radius: 20px;
+            border: 1px solid #ec407a;
+            margin-bottom: 15px;
+        }
+
+        .btn-pink {
+            background-color: #ec407a;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+        }
+
+            .btn-pink:hover {
+                background-color: #d81b60;
+                color: #ffebee;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2 style ="color:cadetblue;text-align: center; font-family: 'Bodoni MT Black', sans-serif;">Editar Usuario</h2>
+
+        <form asp-action="Editar" method="post">
+            <input type="hidden" asp-for="id" />
+
+            <div class="mb-3">
+                <label for="username">Username:</label>
+                <input asp-for="username" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label for="name">Nombre:</label>
+                <input asp-for="name" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label for="fechanacimiento">Fecha Nacimiento:</label>
+                <input asp-for="fechanacimiento" type="date" class="form-control" placeholder="AAAA/MM/DD" />
+            </div>
+
+            <div class="mb-3">
+                <label for="email">Email:</label>
+                <input asp-for="email" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label for="password">Contraseña:</label>
+                <input asp-for="password" class="form-control" />
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-pink">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
